@@ -5,51 +5,52 @@
 #include <string.h>
 using namespace std;
 
+long long int_sum_to_n(long long n)
+{
+	return n*(n+1)/2;
+}
+
 // Driver Code
 int main()
 {
 	long long N = 0;
+	long long res = 0;
+	long long ligne, colonne =0;
 	cin >> N;
 	long long in1[N], in2[N];
 	for (long i=0; i<N; i++)
 		cin >> in1[i] >> in2[i];
-	for (long i =0; i<N;i++)
-	{	
-		if (in1[i] == in2[i])
+	 
+	    for (long i=0; i<N; i++)
+	    {
+		ligne = in1[i];
+		colonne = in2[i];
+	     
+		if (ligne >= colonne)
 		{
-			if (in1[i]==1)
-				cout << 1;
-			else
-				cout << in1[i]*in1[i]-in1[i]-1;
+		    if (ligne&1==1)
+		    {   
+		        res = (ligne-1)*(ligne-1)+colonne;
+	 
+		    }
+		    else
+		    {
+		        res = ligne*ligne-colonne +1;
+		    }
 		}
-		else
+		else 
 		{
-			if (in1[i]>in2[i])
-			{
-				//if (in2%2!=0)
-					//in2 = in2*in2;
-					//le top sera le carre de in2
-				//if (in1%==0)
-					//in1 = in1*in1;
-					//la premier colone de cette ligne sera le carre de in1
-				
-				//le plus grand au carre -le plus petit -1
-				cout << in1[i]*in1[i]-in2[i]+1<< "\n";
-			}			
-			else
-			{
-				//if (in2%2!=0)
-					//in2 = in2*in2;
-					//le top sera le carre de in2
-				//if (in1%==0)
-					//in1 = in1*in1;
-					//la premier colone de cette ligne sera le carre de in1
-				
-				//le plus grand au carre -le plus petit -1
-				cout << in2[i]*in2[i]-in1[i]+1 << "\n";
-			}
+		    if (colonne &1 ==1)
+		    {
+		        res = colonne*colonne-ligne+1;
+		    }
+		    else 
+		    {
+		        res = (colonne -1)*(colonne -1) + ligne ;
+		    }
 		}
-	}
+		
+		cout << res << "\n";
+	    }
 	return 0;
 }
-
