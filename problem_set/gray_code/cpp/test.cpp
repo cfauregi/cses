@@ -41,6 +41,7 @@ int main()
     unsigned short N=0;
     cout << a << nl;
     //print_binary_char(N,n);
+/*
     for (long i=0; i<n;i++)
     {	
 	//cout << i << nl;
@@ -48,6 +49,7 @@ int main()
 	N=N|1<<i;
 	print_binary_char(N,n);
     }
+
     for (long i=0; i<n-1;i++)
     {	
 	//cout << i << nl;
@@ -56,6 +58,22 @@ int main()
 	print_binary_char(N,n);
     }
     N=N&0b1111111111111110<<i;
+	*/
+
+
+    //print_binary_char(N,n);
+    for (long i =0;i<n;i++)
+    {
+    	if (i&1==1)
+	{
+    		N=N|0b1<<i;
+	}
+	else
+	{
+		N=N&0b0<<i;
+	}
+	print_binary_char(N,n);
+    }
     print_binary_char(N,n);
     return 0;
 }
