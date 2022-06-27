@@ -14,35 +14,18 @@ unsigned long long facto (short n)
 
 int main()
 {
-    unsigned long long n;
+    unsigned long n;
   
     // Take input using cin
     cin >> n;
-    unsigned long long i, tampon2=1, N=0;
-    for (i=1; i<n+1; i++)
+    unsigned long i=1, temp=0, j=5;
+    while(i>=1)
     {
-	tampon2*=i;
-	if (tampon2%10==0)
-	{
-		tampon2=tampon2/10;
-		N++;
-	}
+	i=n/j;
+	temp+=i;
+	j*=5;
     }
-    cout << tampon2 << nl;
-    i = (long long) 1000000000000000000;
-    n=0;
-/*
-    while(i != 1)
-    {
-	    if ((tampon2%i)==0)
-	    {
-		tampon2= tampon2/i;
-		n+=1;
-	    }
-	    else
-		i=i/10;    
-    }*/
-    cout << N << nl;
-    //cout << n << nl;
+	
+    cout << temp << nl;
     return 0;
 }
