@@ -1,0 +1,10 @@
+file = open("user_output.txt","r")
+string_me = file.read()
+file.close()
+
+file = open("test_output.txt","r")
+string_test = file.read() 
+file.close()
+
+print("Ma len ", len(string_me))
+print("Sa len ", len(string_test))
